@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>./leaves(仮)</title><link href="ka9e.github.io/" rel="alternate"></link><link href="ka9e.github.io/feeds/blog.atom.xml" rel="self"></link><id>ka9e.github.io/</id><updated>2014-07-05T00:00:00+09:00</updated><entry><title>移転</title><link href="ka9e.github.io/20140705.html" rel="alternate"></link><updated>2014-07-05T00:00:00+09:00</updated><author><name>ka9e</name></author><id>tag:ka9e.github.io,2014-07-05:20140705.html</id><summary type="html">&lt;p&gt;ブログを書くにあたって Tinkerer を使っていたのですが Pelican に移行しました。
+<feed xmlns="http://www.w3.org/2005/Atom"><title>./leaves(仮)</title><link href="http://ka9e.github.io/" rel="alternate"></link><link href="http://ka9e.github.io/feeds/blog.atom.xml" rel="self"></link><id>http://ka9e.github.io/</id><updated>2014-07-05T00:00:00+09:00</updated><entry><title>移転</title><link href="http://ka9e.github.io/20140705.html" rel="alternate"></link><updated>2014-07-05T00:00:00+09:00</updated><author><name>ka9e</name></author><id>tag:ka9e.github.io,2014-07-05:20140705.html</id><summary type="html">&lt;p&gt;ブログを書くにあたって Tinkerer を使っていたのですが Pelican に移行しました。
 移行したのは、静的ページを作る際の Sphinx
 特有の煩わしさに耐えられなかったのが主な理由です。&lt;/p&gt;
 &lt;p&gt;静的サイトジェネレータとして Pelican
