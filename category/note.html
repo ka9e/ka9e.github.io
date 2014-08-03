@@ -1,141 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title>./leaves(仮) &middot; articles in the "note" category</title>
-        <link rel="shortcut icon" href="http://ka9e.github.io/favicon.ico" />
-<link href="http://ka9e.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="./leaves(仮) Atom Feed" />
+<head>
+        <title>./leaves(仮)</title>
+        <meta charset="utf-8" />
+</head>
 
-        <link rel="stylesheet" href="http://ka9e.github.io/theme/css/screen.css" type="text/css" />
-        <link rel="stylesheet" href="http://ka9e.github.io/theme/css/pygments.css" type="text/css" />
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="">./leaves(仮) <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/pages/author.html">Author</a></li>
+            <li><a href="/pages/note.html">Note</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content">
+<h2>Articles in the note category</h2>
 
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-             "HTML-CSS": {
-                 styles: {
-                    ".MathJax .mo, .MathJax .mi": {
-                       color: "black ! important"
-                    }
-                 }
-             },
-          });
-        </script>
-
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    </head>
-    <body>
-<div id="header">
-            <ul id="nav">
-                <li class="ephemeral selected"><a href="http://ka9e.github.io/category/note.html">note</a></li>
-                <li><a href="http://ka9e.github.io">Home</a></li>
-<li><a href="http://ka9e.github.io/pages/author.html">Author</a></li>
-<li><a href="http://ka9e.github.io/pages/note.html">Note</a></li>
-<li><a href="http://ka9e.github.io/archives.html">Archives</a></li>
-            </ul>
-            <div class="header_box">
-                <h1><a href="http://ka9e.github.io">./leaves(仮)</a></h1>
-            </div>
-        </div>
-        <div id="wrapper">
-            <div id="content">
-                <h4 class="date">Jul 11,  2014</h4>
-                <div class="post">
-<h2 class="title">
-                        <a href="http://ka9e.github.io/malloc1.html" rel="bookmark" title="Permanent Link to &quot;What's &quot;new&quot; ? #1&quot;">What's &quot;new&quot; ? #1</a>
-                    </h2>
-
-                    <p>C++の <tt class="docutils literal">new</tt> の挙動から始めて、メモリ管理に関して二、三回記事を書きたい。
-今回はオブジェクト生成のよくある誤解について。</p>
-<div class="section" id="id1">
-<h2>本題</h2>
-<p>C++における典型的なオブジェクトの生成方法として、次の方法が知られている。</p>
-<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Foo</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">();</span>
-    <span class="n">Foo</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Foo</span><span class="p">();</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-<ul class="simple">
-<li>前者 : スタック領域を利用する。関数から抜けると破棄される(自動変数)。</li>
-<li>後者 : ヒープ領域を利用する。 <tt class="docutils literal">delete</tt> で明示的に破棄する。動的な割り当て。</li>
-</ul>
-<p>Web上の資料では、メモリ上の取り扱いと変数の寿命の二点が着目されて、上記のような説明になることが多い。しかしこれは100%正しいわけではない。</p>
-<p>というのも、自動変数は必ずしもスタック領域に配置されるとは限らないし、
-<tt class="docutils literal">new</tt> 演算子もヒープ領域から割り当てるよう決められているわけではない <a class="footnote-reference" href="#id4" id="id2">[1]</a>。
-つまりこれらの挙動は <em>そうなっていることが多い</em> というだけで、本当は実装に依存しているようだ。</p>
-<p>(とはいえ大半の実装がそうしているなら、そういう挙動を仮定することに問題があるとは思わないが)</p>
-<p>では、このヒープ領域とかスタック領域は一体なんだろうか？
-これらの定義は？ 領域の境界は？ 二つを区別して使い分ける意義は？</p>
-<p>この詳細は次回の課題としたい(続く)。</p>
-<p>追伸：<tt class="docutils literal">C++</tt> というタグは使えないらしい……。後日原因を調査する。</p>
-</div>
-<div class="section" id="id3">
-<h2>参考文献</h2>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>江添 亮, &quot;C++11: Syntax and Feature&quot;
-URL: <a class="reference external" href="http://ezoeryou.github.io/cpp-book/C++11-Syntax-and-Feature.xhtml">http://ezoeryou.github.io/cpp-book/C++11-Syntax-and-Feature.xhtml</a></td></tr>
-</tbody>
-</table>
-</div>
-
-
-                    <div class="clear"></div>
-                    <div class="info">
-<a href="http://ka9e.github.io/malloc1.html">posted at 12:00 am</a>&nbsp;&middot;&nbsp;<a href="http://ka9e.github.io/category/note.html" rel="tag">note</a>
-                        <div class="tags">
-                            <a href="http://ka9e.github.io/tag/c.html">C</a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <h4 class="date">Jul  6,  2014</h4>
-                <div class="post">
-<h2 class="title">
-                        <a href="http://ka9e.github.io/commands.html" rel="bookmark" title="Permanent Link to &quot;よく忘れるコマンド&quot;">よく忘れるコマンド</a>
-                    </h2>
-
-                    <p>それなりの頻度で使うコマンドにも関わらず、使い方を思い出せないものがあるのでメモがてら列挙。</p>
-<p>出典はmanから。</p>
-<div class="section" id="mount">
-<h2>mount</h2>
-<div class="highlight"><pre><span class="nv">$ </span>mount -t FSTYPE DEVICE DIR
-</pre></div>
-</div>
-<div class="section" id="rsync">
-<h2>rsync</h2>
-<div class="highlight"><pre><span class="nv">$ </span>rsync -avn SRC DEST
-</pre></div>
-<ul class="simple">
-<li>-v, --verbose : 詳細を出力</li>
-<li>-n, --dry-run : 変更を加えない</li>
-</ul>
-</div>
-
-
-                    <div class="clear"></div>
-                    <div class="info">
-<a href="http://ka9e.github.io/commands.html">posted at 12:00 am</a>&nbsp;&middot;&nbsp;<a href="http://ka9e.github.io/category/note.html" rel="tag">note</a>
-                        <div class="tags">
-                            <a href="http://ka9e.github.io/tag/linux.html">linux</a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-
-                <div class="clear"></div>
-                <div id="footer">
-                    <p>
-                    Mockingbird theme by <a href="http://nevanscott.com/">Nevan Scott</a>
-                    &middot;
-                    <a class="atom" href="http://ka9e.github.io/feeds/all.atom.xml">Feed</a>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </body>
+<ol id="post-list">
+        <li><article class="hentry">
+                <header> <h2 class="entry-title"><a href="/malloc1.html" rel="bookmark" title="Permalink to What's "new" ? #1">What's &quot;new&quot; ? #1</a></h2> </header>
+                <footer class="post-info">
+                    <abbr class="published" title="2014-07-11T00:00:00"> Fri, 11 Jul 2014 </abbr>
+<address class="vcard author">By <a class="url fn" href="/author/ka9e.html">ka9e</a></address>                </footer><!-- /.post-info -->
+                <div class="entry-content"> <p class="first last">newの挙動についてのよくある誤解</p>
+ </div><!-- /.entry-content -->
+        </article></li>
+        <li><article class="hentry">
+                <header> <h2 class="entry-title"><a href="/commands.html" rel="bookmark" title="Permalink to よく忘れるコマンド">よく忘れるコマンド</a></h2> </header>
+                <footer class="post-info">
+                    <abbr class="published" title="2014-07-06T00:00:00"> Sun, 06 Jul 2014 </abbr>
+<address class="vcard author">By <a class="url fn" href="/author/ka9e.html">ka9e</a></address>                </footer><!-- /.post-info -->
+                <div class="entry-content"> <p class="first last">筆者がそれなりの頻度で使うけど引数やオプションを思い出せないコマンド</p>
+ </div><!-- /.entry-content -->
+        </article></li>
+</ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
 </html>
